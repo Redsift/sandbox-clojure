@@ -1,0 +1,24 @@
+{
+  "dag": {
+    "nodes":[
+		{
+			"#": "Test Node 1",
+			"implementation": {
+				"scala": "server/node1.clj"
+			}
+		},
+		{
+			"#": "Test Node 2",
+			"implementation": {
+				"scala": "server/node2/src/node2/core.clj"
+			}
+		},
+        {
+            "#": "Test Sbt Node 1",
+            "implementation": {
+                "scala": "server/sbtnode/src/main/scala/com/redsift/SbtNode1.scala"
+            }
+        }
+	]
+  }
+}
