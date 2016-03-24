@@ -8,15 +8,15 @@
 			}
 		},
 		{
-			"#": "Test Node 2",
+			"#": "Test Lein Node 2",
 			"implementation": {
 				"scala": "server/node2/src/node2/core.clj"
 			}
 		},
         {
-            "#": "Test Sbt Node 1",
+            "#": "Test Lein Alt Node 2",
             "implementation": {
-                "scala": "server/sbtnode/src/main/scala/com/redsift/SbtNode1.scala"
+				"scala": "server/node2-alt/src/node2_alt/core.clj"
             }
         }
 	]
