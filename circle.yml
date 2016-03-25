@@ -27,11 +27,11 @@ test:
         docker run -t --entrypoint=lein $CV -version
         INIT=$(docker inspect -f "{{index .ContainerConfig.Labels \"io.redsift.dagger.init\" }}" $CV)
         echo "Calling init = $INIT"
-        docker run -v $PWD/test:/run/dagger/sift $CV $INIT 0 1 2
+        docker run -v $PWD/test:/run/dagger/sift $CV $INIT 1 2
         ls -A $PWD/test/server/classes || true
         RUN=$(docker inspect -f "{{index .ContainerConfig.Labels \"io.redsift.dagger.run\" }}" $CV)
         echo "Calling run = $RUN"
-        docker run -v $PWD/test:/run/dagger/sift -e DRY=true $CV $RUN 0 1 2
+        docker run -v $PWD/test:/run/dagger/sift -e DRY=true $CV $RUN 1 2
         sudo rm -Rf $PWD/test/server/classes || true
       done
   
