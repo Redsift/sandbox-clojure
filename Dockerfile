@@ -12,7 +12,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     cd /usr/bin/redsift && \
-    wget http://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/clojure-1.8.0.jar && \
+    wget http://repo1.maven.org/maven2/org/clojure/clojure/$version/clojure-$version.jar && \
+    mv clojure-$version.jar clojure.jar && \
     cd /usr/bin && \
     wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
     chmod a+x /usr/bin/lein && \

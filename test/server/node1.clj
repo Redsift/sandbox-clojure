@@ -1,5 +1,6 @@
 (ns server.node1
-    (:gen-class))
+    (:import com.redsift.ComputeRequest
+      com.redsift.ComputeResponse))
 
-(defn compute []
-      (println "Compute Node1"))
+(defn compute [^ComputeRequest req]
+      (println "Compute Node1" req))
