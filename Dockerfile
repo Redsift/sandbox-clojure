@@ -19,8 +19,4 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     chmod a+x /usr/bin/lein && \
     lein
 
-VOLUME /run/dagger/sift
-
-WORKDIR /run/dagger/sift
-
 ENTRYPOINT ["/bin/bash"]
