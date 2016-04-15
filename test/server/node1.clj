@@ -1,6 +1,6 @@
 (ns server.node1
-    (:import com.redsift.ComputeRequest
-      com.redsift.ComputeResponse))
+    (:import io.redsift.ComputeRequest
+      io.redsift.ComputeResponse))
 
 (defn compute [^ComputeRequest req]
       (println "Compute Node1" req))
