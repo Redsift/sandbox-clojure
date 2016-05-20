@@ -24,14 +24,14 @@ test:
       set -e
       for CV in $CLOJURE_VERSIONS
       do
-        docker run -t --entrypoint=lein $CV -version
+        docker run -u 7438 -t --entrypoint=lein $CV -version
         INIT=$(docker inspect -f "{{index .Config.Labels \"io.redsift.sandbox.install\" }}" $CV)
         echo "Calling init = $INIT"
-        docker run -v $PWD/test:/run/sandbox/sift $CV $INIT 0 1 2
+        docker run -u 7438 -v $PWD/test:/run/sandbox/sift $CV $INIT 0 1 2
         ls -A $PWD/test/server/classes || true
         RUN=$(docker inspect -f "{{index .Config.Labels \"io.redsift.sandbox.run\" }}" $CV)
         echo "Calling run = $RUN"
-        docker run -v $PWD/test:/run/sandbox/sift -e DRY=true $CV $RUN 0 1 2
+        docker run -u 7438 -v $PWD/test:/run/sandbox/sift -e DRY=true $CV $RUN 0 1 2
         sudo rm -Rf $PWD/test/server/classes || true
       done
 
