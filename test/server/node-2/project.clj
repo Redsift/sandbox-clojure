@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                            [io.redsift/compute, "1.0"]]
   :repositories {"project" "file:repo"}
-  :main node2.core)
+  :main node-2.core)

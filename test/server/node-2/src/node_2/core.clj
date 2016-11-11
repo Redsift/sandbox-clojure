@@ -1,4 +1,4 @@
-(ns node2.core
+(ns node-2.core
     (:import io.redsift.ComputeRequest
              io.redsift.ComputeResponse))
 

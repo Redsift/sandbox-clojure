@@ -1,24 +1,30 @@
 {
   "dag": {
-    "nodes":[
-		{
-			"#": "Test Node 1",
-			"implementation": {
-				"clojure": "server/node1.clj"
-			}
-		},
-		{
-			"#": "Test Lein Node 2",
-			"implementation": {
-				"clojure": "server/node2/src/node2/core.clj"
-			}
-		},
-        {
-            "#": "Test Lein Alt Node 2",
-            "implementation": {
-				"clojure": "server/node2-alt/src/node2_alt/core.clj"
-            }
+    "nodes": [
+      {
+        "#": "Test Node 1",
+        "implementation": {
+          "clojure": "server/node1.clj"
         }
-	]
+      },
+      {
+        "#": "Test Lein Node 2",
+        "implementation": {
+          "clojure": "server/node-2/src/node_2/core.clj;node-2.core"
+        }
+      },
+      {
+        "#": "Test Lein Alt Node 2",
+        "implementation": {
+          "clojure": "server/node2-alt/src/node2_alt/core.clj;node2-alt.core"
+        }
+      },
+      {
+        "#": "Test Node 3",
+        "implementation": {
+          "clojure": "server/node_3.clj;server.node-3"
+        }
+      }
+    ]
   }
 }
