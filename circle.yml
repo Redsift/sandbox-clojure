@@ -36,6 +36,8 @@ test:
         echo "Calling run = $RUN"
         docker run -u 7438:7438 -v $PWD/test:/run/sandbox/sift:ro -e DRY=true $CV $RUN 0 1 2
         sudo rm -Rf $PWD/test/server/classes || true
+        echo "Calling ClojureTest"
+        echo "/usr/bin/java -cp /usr/bin/redsift/sandbox.jar io.redsift.ClojureTest" | docker run -i --entrypoint /bin/bash $CV
       done
 
 deployment:
