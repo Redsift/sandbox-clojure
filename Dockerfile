@@ -10,7 +10,7 @@ COPY root /
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y wget && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    apt-get purge -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     cd /usr/bin/redsift && \
     wget http://repo1.maven.org/maven2/org/clojure/clojure/$version/clojure-$version.jar && \
     mv clojure-$version.jar clojure.jar && \
