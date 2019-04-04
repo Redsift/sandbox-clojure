@@ -14,7 +14,7 @@ fi
 imageName=$CONTAINER_NAME:v$cv$SUFFIX
 
 echo "Configuring FROM in Dockerfile with suffix=${SUFFIX}"
-sed "s/\(FROM quay\.io\/redsift\/sandbox-clojure\:v\).*/\1${jv}${SUFFIX}/" < Dockerfile > Dockerfile.versioned
+sed "s/\(FROM quay\.io\/redsift\/sandbox-java\:v\).*/\1${jv}${SUFFIX}/" < Dockerfile > Dockerfile.versioned
 
 echo Building $imageName
 docker build --build-arg version=$cv -t $imageName -f ./Dockerfile.versioned .
